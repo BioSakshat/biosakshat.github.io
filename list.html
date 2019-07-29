@@ -4,14 +4,6 @@
 
 <head>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-3848514720264642",
-          enable_page_level_ads: true
-     });
-</script>
-
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
@@ -19,7 +11,7 @@
 
 
 
-<title>Basic R for Life Sciences</title>
+<title>List</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,6 +19,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-1.1/highlight.js"></script>
@@ -170,6 +165,101 @@ $(document).ready(function () {
 
 
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
 
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -190,9 +280,9 @@ $(document).ready(function () {
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-gear"></span>
-
+     
     Data Structure
-
+     
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
@@ -222,9 +312,9 @@ $(document).ready(function () {
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-gear"></span>
-
+     
     Data Manipulation
-
+     
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
@@ -242,9 +332,9 @@ $(document).ready(function () {
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-gear"></span>
-
+     
     Visualization
-
+     
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
@@ -265,9 +355,9 @@ $(document).ready(function () {
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-gear"></span>
-
+     
     Tasks
-
+     
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
@@ -284,7 +374,7 @@ $(document).ready(function () {
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-
+        
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -294,53 +384,85 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Basic R for Life Sciences</h1>
+<h1 class="title toc-ignore">List</h1>
 
 </div>
 
 
-<p>The material was prepared during 3-day hands on workshop on Basic R for Life Sciences (2017), organized by BioSakshat.</p>
-<p><a href="http://biosakshat.weebly.com/" class="uri">http://biosakshat.weebly.com/</a></p>
-<p><img src="image/biosakshat.png" /> <br> <br></p>
-<div id="contributor" class="section level2">
-<h2>Contributor</h2>
-<ul>
-<li><a href="https://in.linkedin.com/in/priyabrata-panigrahi-31621918">Dr. Priyabrata Panigrahi</a></li>
-<li><a href="https://www.linkedin.com/in/pandurang-kolekar-14baa259/?ppe=1">Dr. Pandurang Kolekar</a></li>
-</ul>
+<p>Author: Team BioSakshat</p>
+<p>Last update: June 2017</p>
+<p>
+Copyright © 2017 BioSakshat, Inc. All rights reserved.
+</p>
+<div id="section" class="section level2">
+<h2>.</h2>
+<p>An R list is an object consisting of an ordered collection of objects known as its components.</p>
+<pre class="r"><code>x1=1:5; # vector
+x2=matrix(1:20, ncol=5);
+x3= data.frame(1:5, letters[1:5]);
+mylist = list(comp1=x1, comp2=x2, comp3=x3);
+mylist;</code></pre>
+<pre><code>## $comp1
+## [1] 1 2 3 4 5
+## 
+## $comp2
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    5    9   13   17
+## [2,]    2    6   10   14   18
+## [3,]    3    7   11   15   19
+## [4,]    4    8   12   16   20
+## 
+## $comp3
+##   X1.5 letters.1.5.
+## 1    1            a
+## 2    2            b
+## 3    3            c
+## 4    4            d
+## 5    5            e</code></pre>
 </div>
-<div id="how-to-explore-the-site" class="section level2">
-<h2>How to explore the site</h2>
-<ul>
-<li>Start with <strong>Data structure</strong> module followed by <strong>Data Manipulation</strong> and <strong>Visualization</strong> module.</li>
-<li>Explore <strong>Bioconductor</strong></li>
-<li>Explore <strong>Case study</strong>.</li>
-<li><strong>Tasks</strong> section provides various tasks and their solutions.</li>
-<li><strong>Study more</strong> gives all the website materials in PDF format.</li>
-</ul>
+<div id="access-component-of-list-using-notation" class="section level2">
+<h2>Access component of list using $ notation</h2>
+<pre class="r"><code># Access componene1 using $ notation
+mylist$comp1;</code></pre>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<pre class="r"><code>mylist$comp2;</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    5    9   13   17
+## [2,]    2    6   10   14   18
+## [3,]    3    7   11   15   19
+## [4,]    4    8   12   16   20</code></pre>
 </div>
-<div id="topics-covered" class="section level2">
-<h2>Topics covered</h2>
-<ul>
-<li>Introduction to R &amp; Rstudio</li>
-<li>Understand data, data types &amp; data structures</li>
-<li>Vector, Matrix, data frames, list, factor (Create, modify, delete)</li>
-<li>Interconvert data types, fetching elements</li>
-<li>File reading &amp; writing.</li>
-<li>Create own function.</li>
-<li>Apply set of function for data manipulation</li>
-<li>dplyr package</li>
-<li>Basic plots</li>
-<li>Advanced plot (PCA, heatmap, Clustering)</li>
-<li>Bioconductor</li>
-<li>Write R script</li>
-<li>R using Command line.</li>
-<li>Practice with case study</li>
-</ul>
+<div id="access-component-of-list-using" class="section level2">
+<h2>Access component of list using []</h2>
+<p>Using [] returns list while using [[]] returns the component.</p>
+<pre class="r"><code># Fetching 2nd component using []. Returns list
+m1 = mylist[2];
+# Fetching 2nd component using [[]]. Returns matrix
+m2 = mylist[[2]];
+m1;</code></pre>
+<pre><code>## $comp2
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    5    9   13   17
+## [2,]    2    6   10   14   18
+## [3,]    3    7   11   15   19
+## [4,]    4    8   12   16   20</code></pre>
+<pre class="r"><code>str(m1);</code></pre>
+<pre><code>## List of 1
+##  $ comp2: int [1:4, 1:5] 1 2 3 4 5 6 7 8 9 10 ...</code></pre>
+<pre class="r"><code>m2;</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    5    9   13   17
+## [2,]    2    6   10   14   18
+## [3,]    3    7   11   15   19
+## [4,]    4    8   12   16   20</code></pre>
+<pre class="r"><code>str(m2);</code></pre>
+<pre><code>##  int [1:4, 1:5] 1 2 3 4 5 6 7 8 9 10 ...</code></pre>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 
