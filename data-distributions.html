@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Data Distributions | BioSakshat - Free Study Materials</title>
+  <meta name="description" content="+++" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Data Distributions | BioSakshat - Free Study Materials" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="+++" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Data Distributions | BioSakshat - Free Study Materials" />
+  
+  <meta name="twitter:description" content="+++" />
+  
+
+<meta name="author" content="By Priyabrata Panigrahi and Pandurang Kolekar" />
+
+
+<meta name="date" content="2019-08-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="descriptive-statistics.html">
+<link rel="next" href="regression.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/vis-4.20.1/vis.css" rel="stylesheet" />
+<script src="libs/vis-4.20.1/vis.min.js"></script>
+<script src="libs/visNetwork-binding-2.0.7/visNetwork.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">BioSakshat</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Site navigation</a></li>
+<li class="chapter" data-level="2" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html"><i class="fa fa-check"></i><b>2</b> Data types and Data structures</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#lets-begin"><i class="fa fa-check"></i><b>2.1</b> Lets Begin</a></li>
+<li class="chapter" data-level="2.2" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#expression"><i class="fa fa-check"></i><b>2.2</b> Expression</a></li>
+<li class="chapter" data-level="2.3" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#assignment"><i class="fa fa-check"></i><b>2.3</b> Assignment</a></li>
+<li class="chapter" data-level="2.4" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#working-directory"><i class="fa fa-check"></i><b>2.4</b> Working directory</a></li>
+<li class="chapter" data-level="2.5" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#list-of-objects-in-workspaceenvironment"><i class="fa fa-check"></i><b>2.5</b> List of objects in workspace/environment</a></li>
+<li class="chapter" data-level="2.6" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#getting-help-in-r"><i class="fa fa-check"></i><b>2.6</b> getting help in R</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#some-things-to-remember"><i class="fa fa-check"></i><b>2.6.1</b> Some things to Remember</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#data-types"><i class="fa fa-check"></i><b>2.7</b> Data Types</a></li>
+<li class="chapter" data-level="2.8" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#data-structures"><i class="fa fa-check"></i><b>2.8</b> Data Structures</a></li>
+<li class="chapter" data-level="2.9" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#vector"><i class="fa fa-check"></i><b>2.9</b> Vector</a><ul>
+<li class="chapter" data-level="2.9.1" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#creating-a-vector"><i class="fa fa-check"></i><b>2.9.1</b> Creating a vector</a></li>
+<li class="chapter" data-level="2.9.2" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#create-vector-of-one-element"><i class="fa fa-check"></i><b>2.9.2</b> Create Vector of one element</a></li>
+<li class="chapter" data-level="2.9.3" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#create-vector-using-range-operator"><i class="fa fa-check"></i><b>2.9.3</b> Create Vector using Range operator (:)</a></li>
+<li class="chapter" data-level="2.9.4" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#create-vector-using-c"><i class="fa fa-check"></i><b>2.9.4</b> Create Vector using c()</a></li>
+<li class="chapter" data-level="2.9.5" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#seq-function"><i class="fa fa-check"></i><b>2.9.5</b> seq() function</a></li>
+<li class="chapter" data-level="2.9.6" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#rep-function"><i class="fa fa-check"></i><b>2.9.6</b> rep() function</a></li>
+<li class="chapter" data-level="2.9.7" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#sample-function"><i class="fa fa-check"></i><b>2.9.7</b> sample() function</a></li>
+<li class="chapter" data-level="2.9.8" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#rnorm-function"><i class="fa fa-check"></i><b>2.9.8</b> rnorm() function</a></li>
+<li class="chapter" data-level="2.9.9" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#fetching-elements-from-a-vector"><i class="fa fa-check"></i><b>2.9.9</b> Fetching elements from a vector</a></li>
+<li class="chapter" data-level="2.9.10" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#delete-elements-from-a-vector"><i class="fa fa-check"></i><b>2.9.10</b> Delete element(s) from a vector</a></li>
+<li class="chapter" data-level="2.9.11" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#add-elements-to-existing-vector"><i class="fa fa-check"></i><b>2.9.11</b> Add element(s) to existing vector</a></li>
+<li class="chapter" data-level="2.9.12" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#replace-elements-in-existing-vector"><i class="fa fa-check"></i><b>2.9.12</b> Replace elements in existing vector</a></li>
+<li class="chapter" data-level="2.9.13" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#inbuilt-functions-for-numeric-vector"><i class="fa fa-check"></i><b>2.9.13</b> Inbuilt functions for numeric vector</a></li>
+<li class="chapter" data-level="2.9.14" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#correlation-using-cor"><i class="fa fa-check"></i><b>2.9.14</b> Correlation using cor()</a></li>
+<li class="chapter" data-level="2.9.15" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#set-operations"><i class="fa fa-check"></i><b>2.9.15</b> Set operations</a></li>
+<li class="chapter" data-level="2.9.16" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#arithmetic-expressions"><i class="fa fa-check"></i><b>2.9.16</b> Arithmetic expressions</a></li>
+<li class="chapter" data-level="2.9.17" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#arithmetic-operations-on-vector"><i class="fa fa-check"></i><b>2.9.17</b> Arithmetic operations on vector</a></li>
+<li class="chapter" data-level="2.9.18" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#operator-precedence"><i class="fa fa-check"></i><b>2.9.18</b> Operator precedence</a></li>
+<li class="chapter" data-level="2.9.19" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#conditional-statements"><i class="fa fa-check"></i><b>2.9.19</b> Conditional statements</a></li>
+<li class="chapter" data-level="2.9.20" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#check-for-missing-values"><i class="fa fa-check"></i><b>2.9.20</b> Check for missing values</a></li>
+<li class="chapter" data-level="2.9.21" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#check-data-types-and-data-structures"><i class="fa fa-check"></i><b>2.9.21</b> Check data types and data structures</a></li>
+<li class="chapter" data-level="2.9.22" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#implicit-data-type-conversion"><i class="fa fa-check"></i><b>2.9.22</b> Implicit Data type conversion</a></li>
+<li class="chapter" data-level="2.9.23" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#character-vector-and-related-functions"><i class="fa fa-check"></i><b>2.9.23</b> Character vector and related functions</a></li>
+<li class="chapter" data-level="2.9.24" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#explicit-data-type-conversion"><i class="fa fa-check"></i><b>2.9.24</b> Explicit Data Type Conversion</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#matrix"><i class="fa fa-check"></i><b>2.10</b> Matrix</a><ul>
+<li class="chapter" data-level="2.10.1" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#create-a-matrix-from-vector-using-dim-attributes"><i class="fa fa-check"></i><b>2.10.1</b> Create a matrix from vector using dim attributes</a></li>
+<li class="chapter" data-level="2.10.2" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#create-matrix-using-matrix"><i class="fa fa-check"></i><b>2.10.2</b> Create matrix using matrix()</a></li>
+<li class="chapter" data-level="2.10.3" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#functions-that-can-be-applied-to-a-matrix"><i class="fa fa-check"></i><b>2.10.3</b> Functions that can be applied to a matrix</a></li>
+<li class="chapter" data-level="2.10.4" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#assign-columnrow-names"><i class="fa fa-check"></i><b>2.10.4</b> Assign column/row names</a></li>
+<li class="chapter" data-level="2.10.5" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#fetch-elements-from-a-matrix-using-indices"><i class="fa fa-check"></i><b>2.10.5</b> Fetch elements from a matrix using indices</a></li>
+<li class="chapter" data-level="2.10.6" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#fetch-element-using-index-matrix"><i class="fa fa-check"></i><b>2.10.6</b> Fetch element using index matrix</a></li>
+<li class="chapter" data-level="2.10.7" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#fetch-elements-from-a-matrix-using-row-and-column-names"><i class="fa fa-check"></i><b>2.10.7</b> Fetch elements from a matrix using row and column names</a></li>
+<li class="chapter" data-level="2.10.8" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#insert-rows-and-columns-by-rbind-and-cbind"><i class="fa fa-check"></i><b>2.10.8</b> Insert rows and columns by rbind() and cbind()</a></li>
+<li class="chapter" data-level="2.10.9" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#create-matrix-using-rbind-and-cbind"><i class="fa fa-check"></i><b>2.10.9</b> Create matrix using rbind() and cbind()</a></li>
+<li class="chapter" data-level="2.10.10" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#delete-rows-and-columns"><i class="fa fa-check"></i><b>2.10.10</b> Delete row(s) and column(s)</a></li>
+<li class="chapter" data-level="2.10.11" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#check-for-matrix"><i class="fa fa-check"></i><b>2.10.11</b> Check for matrix</a></li>
+<li class="chapter" data-level="2.10.12" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#conditional-statements-on-matrix"><i class="fa fa-check"></i><b>2.10.12</b> Conditional statements on matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#data-frame"><i class="fa fa-check"></i><b>2.11</b> Data Frame</a><ul>
+<li class="chapter" data-level="2.11.1" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#create-a-data-frame"><i class="fa fa-check"></i><b>2.11.1</b> Create a data frame</a></li>
+<li class="chapter" data-level="2.11.2" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#fetch-values-from-a-data-frame"><i class="fa fa-check"></i><b>2.11.2</b> Fetch values from a data frame</a></li>
+<li class="chapter" data-level="2.11.3" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#insert-column-to-data-frame"><i class="fa fa-check"></i><b>2.11.3</b> Insert column to data frame</a></li>
+<li class="chapter" data-level="2.11.4" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#delete-column-or-row-from-data-frame"><i class="fa fa-check"></i><b>2.11.4</b> Delete column or row from data frame</a></li>
+<li class="chapter" data-level="2.11.5" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#check-for-data-frame"><i class="fa fa-check"></i><b>2.11.5</b> Check for data frame</a></li>
+</ul></li>
+<li class="chapter" data-level="2.12" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#list"><i class="fa fa-check"></i><b>2.12</b> List</a><ul>
+<li class="chapter" data-level="2.12.1" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#access-component-of-list-using-notation"><i class="fa fa-check"></i><b>2.12.1</b> Access component of list using $ notation</a></li>
+<li class="chapter" data-level="2.12.2" data-path="data-types-and-data-structures.html"><a href="data-types-and-data-structures.html#access-component-of-list-using"><i class="fa fa-check"></i><b>2.12.2</b> Access component of list using []</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html"><i class="fa fa-check"></i><b>3</b> If/For/Function/IO</a><ul>
+<li class="chapter" data-level="3.1" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#conditional-statements-1"><i class="fa fa-check"></i><b>3.1</b> Conditional statements</a></li>
+<li class="chapter" data-level="3.2" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#repetitive-execution-using-for-loop"><i class="fa fa-check"></i><b>3.2</b> Repetitive execution using for loop</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#task"><i class="fa fa-check"></i><b>3.2.1</b> Task</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#functions"><i class="fa fa-check"></i><b>3.3</b> Functions</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#define-function"><i class="fa fa-check"></i><b>3.3.1</b> Define function</a></li>
+<li class="chapter" data-level="3.3.2" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#call-function"><i class="fa fa-check"></i><b>3.3.2</b> Call function</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#file-io"><i class="fa fa-check"></i><b>3.4</b> File IO</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#the-read.table-function"><i class="fa fa-check"></i><b>3.4.1</b> The read.table() function</a></li>
+<li class="chapter" data-level="3.4.2" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#read-data"><i class="fa fa-check"></i><b>3.4.2</b> Read data</a></li>
+<li class="chapter" data-level="3.4.3" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#about-headertrue-parameter"><i class="fa fa-check"></i><b>3.4.3</b> About header=TRUE parameter</a></li>
+<li class="chapter" data-level="3.4.4" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#about-stringsasfactors-false-parameter"><i class="fa fa-check"></i><b>3.4.4</b> About stringsAsFactors = FALSE parameter</a></li>
+<li class="chapter" data-level="3.4.5" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#other-useful-parameters"><i class="fa fa-check"></i><b>3.4.5</b> Other useful parameters:</a></li>
+<li class="chapter" data-level="3.4.6" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#read-file-with-unequal-columns-in-first-row-using-read.table."><i class="fa fa-check"></i><b>3.4.6</b> Read file with unequal columns in first row using read.table.</a></li>
+<li class="chapter" data-level="3.4.7" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#read-file-consisting-of-comments-blank-lines-null-values"><i class="fa fa-check"></i><b>3.4.7</b> Read file consisting of comments, blank lines, null values</a></li>
+<li class="chapter" data-level="3.4.8" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#read-csv-file-read.csv"><i class="fa fa-check"></i><b>3.4.8</b> Read csv file read.csv()</a></li>
+<li class="chapter" data-level="3.4.9" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#reading-data-from-excel-file"><i class="fa fa-check"></i><b>3.4.9</b> Reading data from excel file</a></li>
+<li class="chapter" data-level="3.4.10" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#read-data-using-readlines"><i class="fa fa-check"></i><b>3.4.10</b> Read data using readLines()</a></li>
+<li class="chapter" data-level="3.4.11" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#read-data-using-clipboard-feature"><i class="fa fa-check"></i><b>3.4.11</b> Read data using clipboard feature</a></li>
+<li class="chapter" data-level="3.4.12" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#view-data-frame-using-view"><i class="fa fa-check"></i><b>3.4.12</b> View data frame using View()</a></li>
+<li class="chapter" data-level="3.4.13" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#edit-data-frame-using-edit"><i class="fa fa-check"></i><b>3.4.13</b> Edit data frame using edit()</a></li>
+<li class="chapter" data-level="3.4.14" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#write-r-data-frames-in-a-file-using-write.table"><i class="fa fa-check"></i><b>3.4.14</b> Write R data frames in a file using write.table()</a></li>
+<li class="chapter" data-level="3.4.15" data-path="ifforfunctionio.html"><a href="ifforfunctionio.html#write-using-cat"><i class="fa fa-check"></i><b>3.4.15</b> Write using cat()</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>4</b> Data Manipulation</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-manipulation.html"><a href="data-manipulation.html#the-apply-function"><i class="fa fa-check"></i><b>4.1</b> The apply() function</a></li>
+<li class="chapter" data-level="4.2" data-path="data-manipulation.html"><a href="data-manipulation.html#sapply-function"><i class="fa fa-check"></i><b>4.2</b> sapply() function</a></li>
+<li class="chapter" data-level="4.3" data-path="data-manipulation.html"><a href="data-manipulation.html#lapply-function"><i class="fa fa-check"></i><b>4.3</b> lapply() function</a></li>
+<li class="chapter" data-level="4.4" data-path="data-manipulation.html"><a href="data-manipulation.html#dplyr-package"><i class="fa fa-check"></i><b>4.4</b> dplyr package</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="data-manipulation.html"><a href="data-manipulation.html#load-dplyr-library"><i class="fa fa-check"></i><b>4.4.1</b> Load dplyr library</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data-manipulation.html"><a href="data-manipulation.html#load-gene-expression-data"><i class="fa fa-check"></i><b>4.4.2</b> Load Gene Expression Data</a></li>
+<li class="chapter" data-level="4.4.3" data-path="data-manipulation.html"><a href="data-manipulation.html#filter-rows-with-filter"><i class="fa fa-check"></i><b>4.4.3</b> Filter rows with filter()</a></li>
+<li class="chapter" data-level="4.4.4" data-path="data-manipulation.html"><a href="data-manipulation.html#piping-using"><i class="fa fa-check"></i><b>4.4.4</b> Piping using %&gt;%</a></li>
+<li class="chapter" data-level="4.4.5" data-path="data-manipulation.html"><a href="data-manipulation.html#arrange-rows-with-arrange"><i class="fa fa-check"></i><b>4.4.5</b> Arrange rows with arrange()</a></li>
+<li class="chapter" data-level="4.4.6" data-path="data-manipulation.html"><a href="data-manipulation.html#select-rows-position-wise-using-slice"><i class="fa fa-check"></i><b>4.4.6</b> Select rows position wise using slice()</a></li>
+<li class="chapter" data-level="4.4.7" data-path="data-manipulation.html"><a href="data-manipulation.html#select-column-using-select"><i class="fa fa-check"></i><b>4.4.7</b> Select column using select()</a></li>
+<li class="chapter" data-level="4.4.8" data-path="data-manipulation.html"><a href="data-manipulation.html#extract-unique-rows-using-distinct"><i class="fa fa-check"></i><b>4.4.8</b> Extract unique rows using distinct()</a></li>
+<li class="chapter" data-level="4.4.9" data-path="data-manipulation.html"><a href="data-manipulation.html#add-new-columns-with-mutate-and-transmute-function"><i class="fa fa-check"></i><b>4.4.9</b> Add new columns with mutate() and transmute() function</a></li>
+<li class="chapter" data-level="4.4.10" data-path="data-manipulation.html"><a href="data-manipulation.html#summarise-values-with-summarise"><i class="fa fa-check"></i><b>4.4.10</b> Summarise values with summarise()</a></li>
+<li class="chapter" data-level="4.4.11" data-path="data-manipulation.html"><a href="data-manipulation.html#grouped-operations"><i class="fa fa-check"></i><b>4.4.11</b> Grouped operations</a></li>
+<li class="chapter" data-level="4.4.12" data-path="data-manipulation.html"><a href="data-manipulation.html#joins-two-table"><i class="fa fa-check"></i><b>4.4.12</b> Joins two table</a></li>
+<li class="chapter" data-level="4.4.13" data-path="data-manipulation.html"><a href="data-manipulation.html#references"><i class="fa fa-check"></i><b>4.4.13</b> References</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>5</b> Data Visualization</a><ul>
+<li class="chapter" data-level="5.1" data-path="data-visualization.html"><a href="data-visualization.html#base-graphics"><i class="fa fa-check"></i><b>5.1</b> Base Graphics</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="data-visualization.html"><a href="data-visualization.html#simple-scatter-plot"><i class="fa fa-check"></i><b>5.1.1</b> Simple scatter plot</a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-visualization.html"><a href="data-visualization.html#saving-plot"><i class="fa fa-check"></i><b>5.1.2</b> Saving plot</a></li>
+<li class="chapter" data-level="5.1.3" data-path="data-visualization.html"><a href="data-visualization.html#add-titlesubtitlex-axis-labely-axis-label-to-plot"><i class="fa fa-check"></i><b>5.1.3</b> Add title/subtitle/x-axis label/y-axis label to plot</a></li>
+<li class="chapter" data-level="5.1.4" data-path="data-visualization.html"><a href="data-visualization.html#increase-line-thickness"><i class="fa fa-check"></i><b>5.1.4</b> Increase line thickness</a></li>
+<li class="chapter" data-level="5.1.5" data-path="data-visualization.html"><a href="data-visualization.html#assign-color-to-lines-and-points"><i class="fa fa-check"></i><b>5.1.5</b> Assign color to lines and points</a></li>
+<li class="chapter" data-level="5.1.6" data-path="data-visualization.html"><a href="data-visualization.html#explore-built-in-colors"><i class="fa fa-check"></i><b>5.1.6</b> Explore built-in colors</a></li>
+<li class="chapter" data-level="5.1.7" data-path="data-visualization.html"><a href="data-visualization.html#explore-different-symbols"><i class="fa fa-check"></i><b>5.1.7</b> Explore different symbols</a></li>
+<li class="chapter" data-level="5.1.8" data-path="data-visualization.html"><a href="data-visualization.html#explore-different-line-types"><i class="fa fa-check"></i><b>5.1.8</b> Explore different line types</a></li>
+<li class="chapter" data-level="5.1.9" data-path="data-visualization.html"><a href="data-visualization.html#rescale-the-x-axis-and-y-axis"><i class="fa fa-check"></i><b>5.1.9</b> Rescale the x-axis and y-axis</a></li>
+<li class="chapter" data-level="5.1.10" data-path="data-visualization.html"><a href="data-visualization.html#magnification-of-labels-and-symbols"><i class="fa fa-check"></i><b>5.1.10</b> Magnification of labels and symbols</a></li>
+<li class="chapter" data-level="5.1.11" data-path="data-visualization.html"><a href="data-visualization.html#explore-bty-box-type"><i class="fa fa-check"></i><b>5.1.11</b> Explore bty (box type)</a></li>
+<li class="chapter" data-level="5.1.12" data-path="data-visualization.html"><a href="data-visualization.html#explore-las-style-of-axis-labels"><i class="fa fa-check"></i><b>5.1.12</b> Explore las (style of axis labels)</a></li>
+<li class="chapter" data-level="5.1.13" data-path="data-visualization.html"><a href="data-visualization.html#explore-col.axis-col.lab-col.main-col.sub-parameters"><i class="fa fa-check"></i><b>5.1.13</b> Explore col.axis, col.lab, col.main, col.sub parameters</a></li>
+<li class="chapter" data-level="5.1.14" data-path="data-visualization.html"><a href="data-visualization.html#low-level-plotting-functions-lines"><i class="fa fa-check"></i><b>5.1.14</b> Low level plotting functions (lines)</a></li>
+<li class="chapter" data-level="5.1.15" data-path="data-visualization.html"><a href="data-visualization.html#low-level-plotting-functions-legend"><i class="fa fa-check"></i><b>5.1.15</b> Low level plotting functions (legend)</a></li>
+<li class="chapter" data-level="5.1.16" data-path="data-visualization.html"><a href="data-visualization.html#adding-texts-to-existing-plot-text"><i class="fa fa-check"></i><b>5.1.16</b> Adding texts to existing plot (text)</a></li>
+<li class="chapter" data-level="5.1.17" data-path="data-visualization.html"><a href="data-visualization.html#explore-line-plot"><i class="fa fa-check"></i><b>5.1.17</b> Explore Line Plot</a></li>
+<li class="chapter" data-level="5.1.18" data-path="data-visualization.html"><a href="data-visualization.html#explore-simple-bar-plot"><i class="fa fa-check"></i><b>5.1.18</b> Explore simple Bar plot</a></li>
+<li class="chapter" data-level="5.1.19" data-path="data-visualization.html"><a href="data-visualization.html#explore-stacked-bar-plot"><i class="fa fa-check"></i><b>5.1.19</b> Explore stacked bar plot</a></li>
+<li class="chapter" data-level="5.1.20" data-path="data-visualization.html"><a href="data-visualization.html#grouped-bar-plots"><i class="fa fa-check"></i><b>5.1.20</b> Grouped Bar plots</a></li>
+<li class="chapter" data-level="5.1.21" data-path="data-visualization.html"><a href="data-visualization.html#histogram"><i class="fa fa-check"></i><b>5.1.21</b> Histogram</a></li>
+<li class="chapter" data-level="5.1.22" data-path="data-visualization.html"><a href="data-visualization.html#density-plot"><i class="fa fa-check"></i><b>5.1.22</b> Density plot</a></li>
+<li class="chapter" data-level="5.1.23" data-path="data-visualization.html"><a href="data-visualization.html#plot-density-plot-of-two-distributions"><i class="fa fa-check"></i><b>5.1.23</b> Plot density plot of two distributions</a></li>
+<li class="chapter" data-level="5.1.24" data-path="data-visualization.html"><a href="data-visualization.html#box-plots"><i class="fa fa-check"></i><b>5.1.24</b> Box plots</a></li>
+<li class="chapter" data-level="5.1.25" data-path="data-visualization.html"><a href="data-visualization.html#pie-chart"><i class="fa fa-check"></i><b>5.1.25</b> Pie chart</a></li>
+<li class="chapter" data-level="5.1.26" data-path="data-visualization.html"><a href="data-visualization.html#venn-diagram"><i class="fa fa-check"></i><b>5.1.26</b> Venn diagram</a></li>
+<li class="chapter" data-level="5.1.27" data-path="data-visualization.html"><a href="data-visualization.html#heatmap"><i class="fa fa-check"></i><b>5.1.27</b> Heatmap</a></li>
+<li class="chapter" data-level="5.1.28" data-path="data-visualization.html"><a href="data-visualization.html#scatter-plot-matrices"><i class="fa fa-check"></i><b>5.1.28</b> Scatter plot Matrices</a></li>
+<li class="chapter" data-level="5.1.29" data-path="data-visualization.html"><a href="data-visualization.html#ballon-plot"><i class="fa fa-check"></i><b>5.1.29</b> Ballon plot</a></li>
+<li class="chapter" data-level="5.1.30" data-path="data-visualization.html"><a href="data-visualization.html#multi-panel-plots"><i class="fa fa-check"></i><b>5.1.30</b> Multi panel plots</a></li>
+<li class="chapter" data-level="5.1.31" data-path="data-visualization.html"><a href="data-visualization.html#pca-prinicipal-component-analysis"><i class="fa fa-check"></i><b>5.1.31</b> PCA (Prinicipal Component Analysis)</a></li>
+<li class="chapter" data-level="5.1.32" data-path="data-visualization.html"><a href="data-visualization.html#classical-metric-multidimensional-scaling"><i class="fa fa-check"></i><b>5.1.32</b> Classical (Metric) Multidimensional Scaling</a></li>
+<li class="chapter" data-level="5.1.33" data-path="data-visualization.html"><a href="data-visualization.html#plotting-k-means"><i class="fa fa-check"></i><b>5.1.33</b> Plotting K-means</a></li>
+<li class="chapter" data-level="5.1.34" data-path="data-visualization.html"><a href="data-visualization.html#dendrogram"><i class="fa fa-check"></i><b>5.1.34</b> Dendrogram</a></li>
+<li class="chapter" data-level="5.1.35" data-path="data-visualization.html"><a href="data-visualization.html#network-graphs"><i class="fa fa-check"></i><b>5.1.35</b> Network graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="data-visualization.html"><a href="data-visualization.html#plot-using-ggplot2"><i class="fa fa-check"></i><b>5.2</b> Plot using ggplot2</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="data-visualization.html"><a href="data-visualization.html#scatter-plot"><i class="fa fa-check"></i><b>5.2.1</b> Scatter plot</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-visualization.html"><a href="data-visualization.html#add-geom_point-layer"><i class="fa fa-check"></i><b>5.2.2</b> Add geom_point() layer</a></li>
+<li class="chapter" data-level="5.2.3" data-path="data-visualization.html"><a href="data-visualization.html#add-geom_smooth-layer-linear-modeling"><i class="fa fa-check"></i><b>5.2.3</b> Add geom_smooth() layer, linear modeling</a></li>
+<li class="chapter" data-level="5.2.4" data-path="data-visualization.html"><a href="data-visualization.html#explore-aesthetic-parameter-col"><i class="fa fa-check"></i><b>5.2.4</b> Explore aesthetic parameter “col”</a></li>
+<li class="chapter" data-level="5.2.5" data-path="data-visualization.html"><a href="data-visualization.html#assign-aes-to-individual-layer"><i class="fa fa-check"></i><b>5.2.5</b> Assign aes() to individual layer</a></li>
+<li class="chapter" data-level="5.2.6" data-path="data-visualization.html"><a href="data-visualization.html#explore-aesthetic-parameter-shape"><i class="fa fa-check"></i><b>5.2.6</b> Explore aesthetic parameter “shape”</a></li>
+<li class="chapter" data-level="5.2.7" data-path="data-visualization.html"><a href="data-visualization.html#add-axis-lables-and-plot-title-using-labs"><i class="fa fa-check"></i><b>5.2.7</b> Add axis lables and plot title using labs()</a></li>
+<li class="chapter" data-level="5.2.8" data-path="data-visualization.html"><a href="data-visualization.html#change-color-pelette"><i class="fa fa-check"></i><b>5.2.8</b> Change color pelette</a></li>
+<li class="chapter" data-level="5.2.9" data-path="data-visualization.html"><a href="data-visualization.html#save-the-ggplot-object-and-then-print."><i class="fa fa-check"></i><b>5.2.9</b> Save the ggplot object and then print.</a></li>
+<li class="chapter" data-level="5.2.10" data-path="data-visualization.html"><a href="data-visualization.html#the-theme"><i class="fa fa-check"></i><b>5.2.10</b> The Theme</a></li>
+<li class="chapter" data-level="5.2.11" data-path="data-visualization.html"><a href="data-visualization.html#adjusting-the-legend-title"><i class="fa fa-check"></i><b>5.2.11</b> Adjusting the legend title</a></li>
+<li class="chapter" data-level="5.2.12" data-path="data-visualization.html"><a href="data-visualization.html#facet_wrap"><i class="fa fa-check"></i><b>5.2.12</b> Facet_wrap</a></li>
+<li class="chapter" data-level="5.2.13" data-path="data-visualization.html"><a href="data-visualization.html#bar-charts"><i class="fa fa-check"></i><b>5.2.13</b> Bar charts</a></li>
+<li class="chapter" data-level="5.2.14" data-path="data-visualization.html"><a href="data-visualization.html#density-plot-1"><i class="fa fa-check"></i><b>5.2.14</b> Density plot</a></li>
+<li class="chapter" data-level="5.2.15" data-path="data-visualization.html"><a href="data-visualization.html#box-plot"><i class="fa fa-check"></i><b>5.2.15</b> Box plot</a></li>
+<li class="chapter" data-level="5.2.16" data-path="data-visualization.html"><a href="data-visualization.html#references-1"><i class="fa fa-check"></i><b>5.2.16</b> References</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bioconductor.html"><a href="bioconductor.html"><i class="fa fa-check"></i><b>6</b> Bioconductor</a><ul>
+<li class="chapter" data-level="6.1" data-path="bioconductor.html"><a href="bioconductor.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="bioconductor.html"><a href="bioconductor.html#install"><i class="fa fa-check"></i><b>6.1.1</b> Install</a></li>
+<li class="chapter" data-level="6.1.2" data-path="bioconductor.html"><a href="bioconductor.html#explore-bioconductor-tutorials"><i class="fa fa-check"></i><b>6.1.2</b> Explore Bioconductor Tutorials</a></li>
+<li class="chapter" data-level="6.1.3" data-path="bioconductor.html"><a href="bioconductor.html#explore-course-and-conferences-materials"><i class="fa fa-check"></i><b>6.1.3</b> Explore course and conferences materials</a></li>
+<li class="chapter" data-level="6.1.4" data-path="bioconductor.html"><a href="bioconductor.html#explore-and-search-for-package-using-biocviews"><i class="fa fa-check"></i><b>6.1.4</b> Explore and Search for package using BiocViews</a></li>
+<li class="chapter" data-level="6.1.5" data-path="bioconductor.html"><a href="bioconductor.html#bioconductor-forum"><i class="fa fa-check"></i><b>6.1.5</b> Bioconductor Forum</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="bioconductor.html"><a href="bioconductor.html#explore-maftools"><i class="fa fa-check"></i><b>6.2</b> Explore Maftools</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="bioconductor.html"><a href="bioconductor.html#about-maftools"><i class="fa fa-check"></i><b>6.2.1</b> About MAFtools</a></li>
+<li class="chapter" data-level="6.2.2" data-path="bioconductor.html"><a href="bioconductor.html#about-maf-file"><i class="fa fa-check"></i><b>6.2.2</b> About MAF file</a></li>
+<li class="chapter" data-level="6.2.3" data-path="bioconductor.html"><a href="bioconductor.html#install-maftools."><i class="fa fa-check"></i><b>6.2.3</b> Install maftools.</a></li>
+<li class="chapter" data-level="6.2.4" data-path="bioconductor.html"><a href="bioconductor.html#load-maftools-library"><i class="fa fa-check"></i><b>6.2.4</b> Load maftools library</a></li>
+<li class="chapter" data-level="6.2.5" data-path="bioconductor.html"><a href="bioconductor.html#read-example-maf-file"><i class="fa fa-check"></i><b>6.2.5</b> Read example maf file</a></li>
+<li class="chapter" data-level="6.2.6" data-path="bioconductor.html"><a href="bioconductor.html#print-maf-object"><i class="fa fa-check"></i><b>6.2.6</b> Print maf object</a></li>
+<li class="chapter" data-level="6.2.7" data-path="bioconductor.html"><a href="bioconductor.html#structure-of-maf-object"><i class="fa fa-check"></i><b>6.2.7</b> Structure of maf object</a></li>
+<li class="chapter" data-level="6.2.8" data-path="bioconductor.html"><a href="bioconductor.html#shows-sample-summry."><i class="fa fa-check"></i><b>6.2.8</b> Shows sample summry.</a></li>
+<li class="chapter" data-level="6.2.9" data-path="bioconductor.html"><a href="bioconductor.html#show-frequently-mutated-genes."><i class="fa fa-check"></i><b>6.2.9</b> Show frequently mutated genes.</a></li>
+<li class="chapter" data-level="6.2.10" data-path="bioconductor.html"><a href="bioconductor.html#shows-all-fields-in-maf"><i class="fa fa-check"></i><b>6.2.10</b> Shows all fields in MAF</a></li>
+<li class="chapter" data-level="6.2.11" data-path="bioconductor.html"><a href="bioconductor.html#plotting-maf-summary"><i class="fa fa-check"></i><b>6.2.11</b> Plotting MAF summary</a></li>
+<li class="chapter" data-level="6.2.12" data-path="bioconductor.html"><a href="bioconductor.html#oncoplots"><i class="fa fa-check"></i><b>6.2.12</b> Oncoplots</a></li>
+<li class="chapter" data-level="6.2.13" data-path="bioconductor.html"><a href="bioconductor.html#transition-and-transversions."><i class="fa fa-check"></i><b>6.2.13</b> Transition and Transversions.</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="bioconductor.html"><a href="bioconductor.html#explore-cummerbund-for-diffrential-gene-expression-analysis"><i class="fa fa-check"></i><b>6.3</b> Explore cummeRbund for Diffrential Gene Expression Analysis</a></li>
+<li class="chapter" data-level="6.4" data-path="bioconductor.html"><a href="bioconductor.html#references-2"><i class="fa fa-check"></i><b>6.4</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html"><i class="fa fa-check"></i><b>7</b> R Case study and Tasks</a><ul>
+<li class="chapter" data-level="7.1" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#case-study1-gene-expression-data-analysis"><i class="fa fa-check"></i><b>7.1</b> Case study1: Gene Expression Data Analysis</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#experimental-setup"><i class="fa fa-check"></i><b>7.1.1</b> Experimental setup</a></li>
+<li class="chapter" data-level="7.1.2" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#objective"><i class="fa fa-check"></i><b>7.1.2</b> Objective</a></li>
+<li class="chapter" data-level="7.1.3" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#steps"><i class="fa fa-check"></i><b>7.1.3</b> Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#case-study1-solution"><i class="fa fa-check"></i><b>7.2</b> Case study1: Solution</a></li>
+<li class="chapter" data-level="7.3" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#tasks"><i class="fa fa-check"></i><b>7.3</b> Tasks</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#vector-creation"><i class="fa fa-check"></i><b>7.3.1</b> Vector creation</a></li>
+<li class="chapter" data-level="7.3.2" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#fetching-vector-elements"><i class="fa fa-check"></i><b>7.3.2</b> Fetching vector elements</a></li>
+<li class="chapter" data-level="7.3.3" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#vector-manipulation"><i class="fa fa-check"></i><b>7.3.3</b> Vector manipulation</a></li>
+<li class="chapter" data-level="7.3.4" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#vector-arithmetic"><i class="fa fa-check"></i><b>7.3.4</b> Vector arithmetic</a></li>
+<li class="chapter" data-level="7.3.5" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#matrix-1"><i class="fa fa-check"></i><b>7.3.5</b> Matrix</a></li>
+<li class="chapter" data-level="7.3.6" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#data-frame-1"><i class="fa fa-check"></i><b>7.3.6</b> Data Frame</a></li>
+<li class="chapter" data-level="7.3.7" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#tasks-on-iris-data-set"><i class="fa fa-check"></i><b>7.3.7</b> Tasks on Iris data set</a></li>
+<li class="chapter" data-level="7.3.8" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#visualization"><i class="fa fa-check"></i><b>7.3.8</b> Visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#solutions"><i class="fa fa-check"></i><b>7.4</b> Solutions</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#vector-creation-1"><i class="fa fa-check"></i><b>7.4.1</b> Vector creation</a></li>
+<li class="chapter" data-level="7.4.2" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#fetching-vector-elements-1"><i class="fa fa-check"></i><b>7.4.2</b> Fetching vector elements</a></li>
+<li class="chapter" data-level="7.4.3" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#vector-manipulation-1"><i class="fa fa-check"></i><b>7.4.3</b> Vector manipulation</a></li>
+<li class="chapter" data-level="7.4.4" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#vector-arithmetic-1"><i class="fa fa-check"></i><b>7.4.4</b> Vector arithmetic</a></li>
+<li class="chapter" data-level="7.4.5" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#matrix-2"><i class="fa fa-check"></i><b>7.4.5</b> Matrix</a></li>
+<li class="chapter" data-level="7.4.6" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#data-frame-2"><i class="fa fa-check"></i><b>7.4.6</b> Data Frame</a></li>
+<li class="chapter" data-level="7.4.7" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#tasks-on-iris-data-set-1"><i class="fa fa-check"></i><b>7.4.7</b> Tasks on iris data set</a></li>
+<li class="chapter" data-level="7.4.8" data-path="r-case-study-and-tasks.html"><a href="r-case-study-and-tasks.html#visualization-1"><i class="fa fa-check"></i><b>7.4.8</b> Visualization</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>8</b> Descriptive statistics</a><ul>
+<li class="chapter" data-level="8.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#measure-of-centrality"><i class="fa fa-check"></i><b>8.1</b> Measure of Centrality</a></li>
+<li class="chapter" data-level="8.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#measure-of-spread"><i class="fa fa-check"></i><b>8.2</b> Measure of Spread</a></li>
+<li class="chapter" data-level="8.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#handle-missing-values"><i class="fa fa-check"></i><b>8.3</b> Handle missing values</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#shape-data-distribution"><i class="fa fa-check"></i><b>8.3.1</b> Shape / Data Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#estimate-skewness-and-kurtosis"><i class="fa fa-check"></i><b>8.4</b> Estimate Skewness and Kurtosis</a></li>
+<li class="chapter" data-level="8.5" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#further-with-skewness-and-kurtosis."><i class="fa fa-check"></i><b>8.5</b> Further with Skewness and Kurtosis.</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="data-distributions.html"><a href="data-distributions.html"><i class="fa fa-check"></i><b>9</b> Data Distributions</a><ul>
+<li class="chapter" data-level="9.1" data-path="data-distributions.html"><a href="data-distributions.html#normal-distribution"><i class="fa fa-check"></i><b>9.1</b> Normal distribution</a></li>
+<li class="chapter" data-level="9.2" data-path="data-distributions.html"><a href="data-distributions.html#effect-of-mean-and-sd-parameter-on-normal-distribution"><i class="fa fa-check"></i><b>9.2</b> Effect of mean and sd parameter on normal distribution</a></li>
+<li class="chapter" data-level="9.3" data-path="data-distributions.html"><a href="data-distributions.html#effect-of-n-sample-size-on-normal-distribution"><i class="fa fa-check"></i><b>9.3</b> Effect of n (sample size) on normal distribution</a></li>
+<li class="chapter" data-level="9.4" data-path="data-distributions.html"><a href="data-distributions.html#use-z-score-to-calculate-percentile-area-below-or-lower-tail"><i class="fa fa-check"></i><b>9.4</b> Use z score to calculate percentile (area below or lower tail)</a></li>
+<li class="chapter" data-level="9.5" data-path="data-distributions.html"><a href="data-distributions.html#use-z-score-to-calculate-upper-tail"><i class="fa fa-check"></i><b>9.5</b> Use z score to calculate Upper tail</a></li>
+<li class="chapter" data-level="9.6" data-path="data-distributions.html"><a href="data-distributions.html#given-percentile-area-below-the-curve-or-lower-tail-area-find-the-z-score"><i class="fa fa-check"></i><b>9.6</b> Given percentile (area below the curve or lower tail area), find the z score</a></li>
+<li class="chapter" data-level="9.7" data-path="data-distributions.html"><a href="data-distributions.html#explore-the-applet"><i class="fa fa-check"></i><b>9.7</b> Explore the applet</a></li>
+<li class="chapter" data-level="9.8" data-path="data-distributions.html"><a href="data-distributions.html#evaluating-the-normal-distribution"><i class="fa fa-check"></i><b>9.8</b> Evaluating the normal distribution</a></li>
+<li class="chapter" data-level="9.9" data-path="data-distributions.html"><a href="data-distributions.html#sampling-distribution"><i class="fa fa-check"></i><b>9.9</b> Sampling distribution</a></li>
+<li class="chapter" data-level="9.10" data-path="data-distributions.html"><a href="data-distributions.html#standard-error"><i class="fa fa-check"></i><b>9.10</b> Standard Error</a></li>
+<li class="chapter" data-level="9.11" data-path="data-distributions.html"><a href="data-distributions.html#confidence-interval"><i class="fa fa-check"></i><b>9.11</b> Confidence interval</a></li>
+<li class="chapter" data-level="9.12" data-path="data-distributions.html"><a href="data-distributions.html#hypothesis-test-for-single-sample-mean"><i class="fa fa-check"></i><b>9.12</b> Hypothesis test for single sample mean</a></li>
+<li class="chapter" data-level="9.13" data-path="data-distributions.html"><a href="data-distributions.html#one-tailed-test-greater"><i class="fa fa-check"></i><b>9.13</b> One tailed test (Greater)</a></li>
+<li class="chapter" data-level="9.14" data-path="data-distributions.html"><a href="data-distributions.html#one-tailed-test-lesser"><i class="fa fa-check"></i><b>9.14</b> One tailed test (Lesser)</a></li>
+<li class="chapter" data-level="9.15" data-path="data-distributions.html"><a href="data-distributions.html#hypothesis-test-for-two-sample-mean-unpaired"><i class="fa fa-check"></i><b>9.15</b> Hypothesis test for two sample mean, unpaired</a></li>
+<li class="chapter" data-level="9.16" data-path="data-distributions.html"><a href="data-distributions.html#hypothesis-test-for-two-sample-mean-paired"><i class="fa fa-check"></i><b>9.16</b> Hypothesis test for two sample mean, paired</a></li>
+<li class="chapter" data-level="9.17" data-path="data-distributions.html"><a href="data-distributions.html#check-for-normality"><i class="fa fa-check"></i><b>9.17</b> Check for normality</a></li>
+<li class="chapter" data-level="9.18" data-path="data-distributions.html"><a href="data-distributions.html#check-for-uniform-variance"><i class="fa fa-check"></i><b>9.18</b> Check for uniform variance</a></li>
+<li class="chapter" data-level="9.19" data-path="data-distributions.html"><a href="data-distributions.html#hypothesis-test-for-single-sample-proportion"><i class="fa fa-check"></i><b>9.19</b> Hypothesis test for single sample proportion</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>10</b> Regression</a><ul>
+<li class="chapter" data-level="10.1" data-path="regression.html"><a href="regression.html#simple-linear-regression"><i class="fa fa-check"></i><b>10.1</b> Simple linear Regression</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="regression.html"><a href="regression.html#build-model"><i class="fa fa-check"></i><b>10.1.1</b> Build model</a></li>
+<li class="chapter" data-level="10.1.2" data-path="regression.html"><a href="regression.html#obtain-model-summary-linear-regression-diagnostics"><i class="fa fa-check"></i><b>10.1.2</b> Obtain model summary (Linear Regression Diagnostics)</a></li>
+<li class="chapter" data-level="10.1.3" data-path="regression.html"><a href="regression.html#model-coefficients"><i class="fa fa-check"></i><b>10.1.3</b> Model coefficients</a></li>
+<li class="chapter" data-level="10.1.4" data-path="regression.html"><a href="regression.html#model-significance-and-coefficient-significance"><i class="fa fa-check"></i><b>10.1.4</b> Model significance and Coefficient significance</a></li>
+<li class="chapter" data-level="10.1.5" data-path="regression.html"><a href="regression.html#coefficient-of-determination-or-r-squared"><i class="fa fa-check"></i><b>10.1.5</b> Coefficient of Determination or R-squared</a></li>
+<li class="chapter" data-level="10.1.6" data-path="regression.html"><a href="regression.html#standard-error-and-f-statistic"><i class="fa fa-check"></i><b>10.1.6</b> Standard Error and F-Statistic</a></li>
+<li class="chapter" data-level="10.1.7" data-path="regression.html"><a href="regression.html#aic-and-bic"><i class="fa fa-check"></i><b>10.1.7</b> AIC and BIC</a></li>
+<li class="chapter" data-level="10.1.8" data-path="regression.html"><a href="regression.html#residuals-and-residual-plot"><i class="fa fa-check"></i><b>10.1.8</b> Residuals and Residual plot</a></li>
+<li class="chapter" data-level="10.1.9" data-path="regression.html"><a href="regression.html#how-to-know-if-the-model-is-best-fit-for-your-data"><i class="fa fa-check"></i><b>10.1.9</b> How to know if the model is best fit for your data?</a></li>
+<li class="chapter" data-level="10.1.10" data-path="regression.html"><a href="regression.html#lets-predict-a-new-dataset-using-the-built-model"><i class="fa fa-check"></i><b>10.1.10</b> Lets predict a new dataset using the built model</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="regression.html"><a href="regression.html#multiple-linear-regression"><i class="fa fa-check"></i><b>10.2</b> Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="regression.html"><a href="regression.html#build-multiple-regression-model"><i class="fa fa-check"></i><b>10.2.1</b> Build multiple regression model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>11</b> Clustering</a><ul>
+<li class="chapter" data-level="11.1" data-path="clustering.html"><a href="clustering.html#data-preparation"><i class="fa fa-check"></i><b>11.1</b> Data preparation</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="clustering.html"><a href="clustering.html#load-library"><i class="fa fa-check"></i><b>11.1.1</b> Load library</a></li>
+<li class="chapter" data-level="11.1.2" data-path="clustering.html"><a href="clustering.html#load-tcga-data"><i class="fa fa-check"></i><b>11.1.2</b> Load TCGA data</a></li>
+<li class="chapter" data-level="11.1.3" data-path="clustering.html"><a href="clustering.html#vizualize-data"><i class="fa fa-check"></i><b>11.1.3</b> Vizualize data</a></li>
+<li class="chapter" data-level="11.1.4" data-path="clustering.html"><a href="clustering.html#data-preparation-1"><i class="fa fa-check"></i><b>11.1.4</b> Data preparation</a></li>
+<li class="chapter" data-level="11.1.5" data-path="clustering.html"><a href="clustering.html#check-for-na"><i class="fa fa-check"></i><b>11.1.5</b> Check for NA</a></li>
+<li class="chapter" data-level="11.1.6" data-path="clustering.html"><a href="clustering.html#scale-the-data"><i class="fa fa-check"></i><b>11.1.6</b> Scale the data</a></li>
+<li class="chapter" data-level="11.1.7" data-path="clustering.html"><a href="clustering.html#vizualize-data-after-scaling"><i class="fa fa-check"></i><b>11.1.7</b> Vizualize data after scaling</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="clustering.html"><a href="clustering.html#clustering-1"><i class="fa fa-check"></i><b>11.2</b> Clustering</a></li>
+<li class="chapter" data-level="11.3" data-path="clustering.html"><a href="clustering.html#k-means-clustering"><i class="fa fa-check"></i><b>11.3</b> K-means clustering</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="clustering.html"><a href="clustering.html#visualizing-k-means-clusters-in-2d-space"><i class="fa fa-check"></i><b>11.3.1</b> Visualizing k-means clusters in 2D space</a></li>
+<li class="chapter" data-level="11.3.2" data-path="clustering.html"><a href="clustering.html#get-details-of-clusters"><i class="fa fa-check"></i><b>11.3.2</b> Get details of clusters</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="clustering.html"><a href="clustering.html#determining-the-optimal-number-of-clusters"><i class="fa fa-check"></i><b>11.4</b> Determining The Optimal Number Of Clusters</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="clustering.html"><a href="clustering.html#elbow-method"><i class="fa fa-check"></i><b>11.4.1</b> Elbow method</a></li>
+<li class="chapter" data-level="11.4.2" data-path="clustering.html"><a href="clustering.html#average-silhouette-method"><i class="fa fa-check"></i><b>11.4.2</b> Average silhouette method</a></li>
+<li class="chapter" data-level="11.4.3" data-path="clustering.html"><a href="clustering.html#gap-statistic-method"><i class="fa fa-check"></i><b>11.4.3</b> Gap statistic method</a></li>
+<li class="chapter" data-level="11.4.4" data-path="clustering.html"><a href="clustering.html#nbclust-function-30-indices-for-choosing-the-best-number-of-clusters"><i class="fa fa-check"></i><b>11.4.4</b> NbClust() function: 30 indices for choosing the best number of clusters</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>12</b> PCA</a><ul>
+<li class="chapter" data-level="12.1" data-path="pca.html"><a href="pca.html#about-principal-component-analysis-pca"><i class="fa fa-check"></i><b>12.1</b> About Principal Component Analysis (PCA</a></li>
+<li class="chapter" data-level="12.2" data-path="pca.html"><a href="pca.html#data-preparation-2"><i class="fa fa-check"></i><b>12.2</b> Data preparation</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="pca.html"><a href="pca.html#load-gene-expression-data-from-tcga-breast-cancer"><i class="fa fa-check"></i><b>12.2.1</b> Load Gene expression data from TCGA Breast cancer</a></li>
+<li class="chapter" data-level="12.2.2" data-path="pca.html"><a href="pca.html#data-standardization"><i class="fa fa-check"></i><b>12.2.2</b> Data standardization</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="pca.html"><a href="pca.html#perform-pca"><i class="fa fa-check"></i><b>12.3</b> Perform PCA</a></li>
+<li class="chapter" data-level="12.4" data-path="pca.html"><a href="pca.html#visualization-and-interpretation"><i class="fa fa-check"></i><b>12.4</b> Visualization and Interpretation</a></li>
+<li class="chapter" data-level="12.5" data-path="pca.html"><a href="pca.html#eigenvalues-variances-number-of-pcs-to-consider"><i class="fa fa-check"></i><b>12.5</b> Eigenvalues / Variances / Number of PCs to consider</a></li>
+<li class="chapter" data-level="12.6" data-path="pca.html"><a href="pca.html#graph-of-variables"><i class="fa fa-check"></i><b>12.6</b> Graph of variables</a></li>
+<li class="chapter" data-level="12.7" data-path="pca.html"><a href="pca.html#correlation-circle"><i class="fa fa-check"></i><b>12.7</b> Correlation circle</a></li>
+<li class="chapter" data-level="12.8" data-path="pca.html"><a href="pca.html#quality-of-representation"><i class="fa fa-check"></i><b>12.8</b> Quality of representation</a></li>
+<li class="chapter" data-level="12.9" data-path="pca.html"><a href="pca.html#referece"><i class="fa fa-check"></i><b>12.9</b> Referece</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="network-analysis.html"><a href="network-analysis.html"><i class="fa fa-check"></i><b>13</b> Network analysis</a><ul>
+<li class="chapter" data-level="13.1" data-path="network-analysis.html"><a href="network-analysis.html#data-processing"><i class="fa fa-check"></i><b>13.1</b> Data processing</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="network-analysis.html"><a href="network-analysis.html#load-igraph-library"><i class="fa fa-check"></i><b>13.1.1</b> Load iGraph Library</a></li>
+<li class="chapter" data-level="13.1.2" data-path="network-analysis.html"><a href="network-analysis.html#load-data"><i class="fa fa-check"></i><b>13.1.2</b> Load data</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="network-analysis.html"><a href="network-analysis.html#convert-data-frame-to-graph"><i class="fa fa-check"></i><b>13.2</b> Convert data frame to graph</a></li>
+<li class="chapter" data-level="13.3" data-path="network-analysis.html"><a href="network-analysis.html#node-and-edge-details"><i class="fa fa-check"></i><b>13.3</b> Node and Edge details</a></li>
+<li class="chapter" data-level="13.4" data-path="network-analysis.html"><a href="network-analysis.html#plot-parameters"><i class="fa fa-check"></i><b>13.4</b> Plot Parameters</a></li>
+<li class="chapter" data-level="13.5" data-path="network-analysis.html"><a href="network-analysis.html#network-layouts"><i class="fa fa-check"></i><b>13.5</b> Network layouts</a></li>
+<li class="chapter" data-level="13.6" data-path="network-analysis.html"><a href="network-analysis.html#network-and-node-descriptives"><i class="fa fa-check"></i><b>13.6</b> Network and node descriptives</a><ul>
+<li class="chapter" data-level="13.6.1" data-path="network-analysis.html"><a href="network-analysis.html#edge-density"><i class="fa fa-check"></i><b>13.6.1</b> Edge density</a></li>
+<li class="chapter" data-level="13.6.2" data-path="network-analysis.html"><a href="network-analysis.html#diameter"><i class="fa fa-check"></i><b>13.6.2</b> Diameter</a></li>
+</ul></li>
+<li class="chapter" data-level="13.7" data-path="network-analysis.html"><a href="network-analysis.html#centrality-centralization"><i class="fa fa-check"></i><b>13.7</b> Centrality &amp; centralization</a><ul>
+<li class="chapter" data-level="13.7.1" data-path="network-analysis.html"><a href="network-analysis.html#degree-centrality"><i class="fa fa-check"></i><b>13.7.1</b> Degree centrality</a></li>
+<li class="chapter" data-level="13.7.2" data-path="network-analysis.html"><a href="network-analysis.html#closeness"><i class="fa fa-check"></i><b>13.7.2</b> Closeness</a></li>
+<li class="chapter" data-level="13.7.3" data-path="network-analysis.html"><a href="network-analysis.html#betweenness"><i class="fa fa-check"></i><b>13.7.3</b> Betweenness</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="network-analysis.html"><a href="network-analysis.html#hubs-and-authorities"><i class="fa fa-check"></i><b>13.8</b> Hubs and authorities</a></li>
+<li class="chapter" data-level="13.9" data-path="network-analysis.html"><a href="network-analysis.html#distances-and-paths"><i class="fa fa-check"></i><b>13.9</b> Distances and paths</a></li>
+<li class="chapter" data-level="13.10" data-path="network-analysis.html"><a href="network-analysis.html#cliques"><i class="fa fa-check"></i><b>13.10</b> Cliques</a></li>
+<li class="chapter" data-level="13.11" data-path="network-analysis.html"><a href="network-analysis.html#community-detection"><i class="fa fa-check"></i><b>13.11</b> Community detection</a></li>
+<li class="chapter" data-level="13.12" data-path="network-analysis.html"><a href="network-analysis.html#interative-network"><i class="fa fa-check"></i><b>13.12</b> Interative network</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Visit site</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BioSakshat - Free Study Materials</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-distributions" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Data Distributions</h1>
+<div id="normal-distribution" class="section level2">
+<h2><span class="header-section-number">9.1</span> Normal distribution</h2>
+<p>Normal distribution is explain by 2 parameter, mean and standard deviation</p>
+<p>Normal distribution with mean = 0 and sd = 1 is called the standard normal distribution, and is denoted as N(0,1).</p>
+<p>Changing the mean value will shift the distribution along x-axis</p>
+<p>Changing the standard deviation will change the spread of distribution, thus shape.</p>
+</div>
+<div id="effect-of-mean-and-sd-parameter-on-normal-distribution" class="section level2">
+<h2><span class="header-section-number">9.2</span> Effect of mean and sd parameter on normal distribution</h2>
+<div class="sourceCode" id="cb853"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb853-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">15</span>);</a>
+<a class="sourceLine" id="cb853-2" data-line-number="2"><span class="co"># Fetch 100 random elements from a normal distribution with mean 0, sd 1</span></a>
+<a class="sourceLine" id="cb853-3" data-line-number="3">x1 =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb853-4" data-line-number="4"><span class="co"># Fetch 100 random elements from a normal distribution with mean 0, sd 3</span></a>
+<a class="sourceLine" id="cb853-5" data-line-number="5">x2 =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb853-6" data-line-number="6"><span class="co"># Fetch 100 random elements from a normal distribution with mean 5, sd 1</span></a>
+<a class="sourceLine" id="cb853-7" data-line-number="7">x3 =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">5</span>, <span class="dt">sd =</span> <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb853-8" data-line-number="8"><span class="co"># Fetch 100 random elements from a normal distribution with mean 5, sd 3</span></a>
+<a class="sourceLine" id="cb853-9" data-line-number="9">x4 =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">5</span>, <span class="dt">sd =</span> <span class="dv">2</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb854"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb854-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">density</span>(x1), <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>));</a>
+<a class="sourceLine" id="cb854-2" data-line-number="2"><span class="kw">lines</span>(<span class="kw">density</span>(x2), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb854-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">density</span>(x3), <span class="dt">col=</span><span class="st">&quot;green&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb854-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">density</span>(x4), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>);</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-208-1.png" width="672" /></p>
+</div>
+<div id="effect-of-n-sample-size-on-normal-distribution" class="section level2">
+<h2><span class="header-section-number">9.3</span> Effect of n (sample size) on normal distribution</h2>
+<div class="sourceCode" id="cb855"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb855-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">35</span>);</a>
+<a class="sourceLine" id="cb855-2" data-line-number="2"><span class="co"># Fetch 10 random elements from a normal distribution with mean 0, sd 1</span></a>
+<a class="sourceLine" id="cb855-3" data-line-number="3">x1 =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">10</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb855-4" data-line-number="4"><span class="co"># Fetch 20 random elements from a normal distribution with mean 0, sd 1</span></a>
+<a class="sourceLine" id="cb855-5" data-line-number="5">x2 =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb855-6" data-line-number="6"><span class="co"># Fetch 50 random elements from a normal distribution with mean 0, sd 1</span></a>
+<a class="sourceLine" id="cb855-7" data-line-number="7">x3 =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">50</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb855-8" data-line-number="8"><span class="co"># Fetch 100 random elements from a normal distribution with mean 0, sd 1</span></a>
+<a class="sourceLine" id="cb855-9" data-line-number="9">x4 =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb855-10" data-line-number="10"><span class="co"># Fetch 1000 random elements from a normal distribution with mean 0, sd 1</span></a>
+<a class="sourceLine" id="cb855-11" data-line-number="11">x5 =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">1000</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>);</a></code></pre></div>
+<p>As n increases (&gt;30), distribution approximates to normal distribution.</p>
+<div class="sourceCode" id="cb856"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb856-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">density</span>(x1), <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>));</a>
+<a class="sourceLine" id="cb856-2" data-line-number="2"><span class="kw">lines</span>(<span class="kw">density</span>(x2), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb856-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">density</span>(x3), <span class="dt">col=</span><span class="st">&quot;green&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb856-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">density</span>(x4), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb856-5" data-line-number="5"><span class="kw">lines</span>(<span class="kw">density</span>(x5), <span class="dt">col=</span><span class="st">&quot;cyan&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>);</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-210-1.png" width="672" /></p>
+</div>
+<div id="use-z-score-to-calculate-percentile-area-below-or-lower-tail" class="section level2">
+<h2><span class="header-section-number">9.4</span> Use z score to calculate percentile (area below or lower tail)</h2>
+<p>Percentile is percentage of observations that fall below a given data point</p>
+<p>Use pnorm (probability distribution function)</p>
+<p>q = quantile. As q increases, the area under the curve below q increases. So as pnorm</p>
+<div class="sourceCode" id="cb857"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb857-1" data-line-number="1"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">-0.5</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>); <span class="co"># 30% observations fall below -0.5</span></a></code></pre></div>
+<pre><code>## [1] 0.3085375</code></pre>
+<div class="sourceCode" id="cb859"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb859-1" data-line-number="1"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">-0.2</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>); <span class="co"># 42% observations fall below -0.2</span></a></code></pre></div>
+<pre><code>## [1] 0.4207403</code></pre>
+<div class="sourceCode" id="cb861"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb861-1" data-line-number="1"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">-0.1</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>); <span class="co"># 46% observations fall below -0.1</span></a></code></pre></div>
+<pre><code>## [1] 0.4601722</code></pre>
+<div class="sourceCode" id="cb863"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb863-1" data-line-number="1"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">0.1</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>); <span class="co"># 53% observations fall below 0.1</span></a></code></pre></div>
+<pre><code>## [1] 0.5398278</code></pre>
+<div class="sourceCode" id="cb865"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb865-1" data-line-number="1"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">0.2</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>); <span class="co"># 57% observations fall below 0.2</span></a></code></pre></div>
+<pre><code>## [1] 0.5792597</code></pre>
+<div class="sourceCode" id="cb867"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb867-1" data-line-number="1"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">0.5</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>); <span class="co"># 69% observations fall below 0.5</span></a></code></pre></div>
+<pre><code>## [1] 0.6914625</code></pre>
+<div class="sourceCode" id="cb869"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb869-1" data-line-number="1"><span class="co"># Now changing with mean and sd</span></a>
+<a class="sourceLine" id="cb869-2" data-line-number="2"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="dv">4</span>, <span class="dt">mean =</span> <span class="dv">5</span>, <span class="dt">sd =</span> <span class="dv">1</span>); <span class="co"># 15% observations fall below 4</span></a></code></pre></div>
+<pre><code>## [1] 0.1586553</code></pre>
+</div>
+<div id="use-z-score-to-calculate-upper-tail" class="section level2">
+<h2><span class="header-section-number">9.5</span> Use z score to calculate Upper tail</h2>
+<div class="sourceCode" id="cb871"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb871-1" data-line-number="1"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">-0.5</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>); <span class="co"># 69% observations fall above -0.5</span></a></code></pre></div>
+<pre><code>## [1] 0.6914625</code></pre>
+<div class="sourceCode" id="cb873"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb873-1" data-line-number="1"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">-0.2</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>); <span class="co"># 57% observations fall above -0.2</span></a></code></pre></div>
+<pre><code>## [1] 0.5792597</code></pre>
+<div class="sourceCode" id="cb875"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb875-1" data-line-number="1"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">-0.1</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>); <span class="co"># 53% observations fall above -0.1</span></a></code></pre></div>
+<pre><code>## [1] 0.5398278</code></pre>
+<div class="sourceCode" id="cb877"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb877-1" data-line-number="1"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">0.1</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>); <span class="co"># 46% observations fall above 0.1</span></a></code></pre></div>
+<pre><code>## [1] 0.4601722</code></pre>
+<div class="sourceCode" id="cb879"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb879-1" data-line-number="1"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">0.2</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>); <span class="co"># 42% observations fall above 0.2</span></a></code></pre></div>
+<pre><code>## [1] 0.4207403</code></pre>
+<div class="sourceCode" id="cb881"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb881-1" data-line-number="1"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">0.5</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>); <span class="co"># 30% observations fall above 0.5</span></a></code></pre></div>
+<pre><code>## [1] 0.3085375</code></pre>
+</div>
+<div id="given-percentile-area-below-the-curve-or-lower-tail-area-find-the-z-score" class="section level2">
+<h2><span class="header-section-number">9.6</span> Given percentile (area below the curve or lower tail area), find the z score</h2>
+<p>Use qnorm (Quantile function)</p>
+<div class="sourceCode" id="cb883"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb883-1" data-line-number="1"><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="fl">0.3</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>); <span class="co"># Data point at which 30% observations found below is -0.52</span></a></code></pre></div>
+<pre><code>## [1] -0.5244005</code></pre>
+<div class="sourceCode" id="cb885"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb885-1" data-line-number="1"><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="fl">0.4</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>); <span class="co"># Data point at which 40% observations found below is -0.25</span></a></code></pre></div>
+<pre><code>## [1] -0.2533471</code></pre>
+<div class="sourceCode" id="cb887"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb887-1" data-line-number="1"><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="fl">0.5</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>); <span class="co"># Data point at which 50% observations found below is 0 because mean = 0</span></a></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb889"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb889-1" data-line-number="1"><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="fl">0.6</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>); <span class="co"># Data point at which 60% observations found below is 0.25</span></a></code></pre></div>
+<pre><code>## [1] 0.2533471</code></pre>
+<div class="sourceCode" id="cb891"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb891-1" data-line-number="1"><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="fl">0.7</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>); <span class="co"># Data point at which 70% observations found below is 0.52</span></a></code></pre></div>
+<pre><code>## [1] 0.5244005</code></pre>
+<div class="sourceCode" id="cb893"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb893-1" data-line-number="1"><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="fl">0.9</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>); <span class="co"># Data point at which 90% observations found below is 1.28</span></a></code></pre></div>
+<pre><code>## [1] 1.281552</code></pre>
+</div>
+<div id="explore-the-applet" class="section level2">
+<h2><span class="header-section-number">9.7</span> Explore the applet</h2>
+<p><a href="https://gallery.shinyapps.io/dist_calc/" class="uri">https://gallery.shinyapps.io/dist_calc/</a></p>
+</div>
+<div id="evaluating-the-normal-distribution" class="section level2">
+<h2><span class="header-section-number">9.8</span> Evaluating the normal distribution</h2>
+<p>Histogram though is a nice way to look the overall distribution of data, it sometimes become difficult to check for normality from the plot itself. Another useful alternative way is to draw a normal probability plot (normal Q-Q plot or quantile-quantile plot).</p>
+<p>Below we draw QQplot for each features from iris dataset. In a perfectly normal distribution, x-axis (theoretical quantiles) and y-axis (Observed quantiles) should match perfectly well, thus all points will be on the diagonel line. Any deviation (skewness) will show the deviation of datapoints away from the line. Based on which end the deviation is, one can guess whether the given data is either left/right skewed.</p>
+<p>A data set that is nearly normal will result in a probability plot where the points closely follow the line. Any deviations from normality leads to deviations of these points from the line.</p>
+<p>In the example below</p>
+<div class="sourceCode" id="cb895"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb895-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb895-2" data-line-number="2"><span class="kw">qqnorm</span>(iris<span class="op">$</span>Sepal.Length);</a>
+<a class="sourceLine" id="cb895-3" data-line-number="3"><span class="kw">qqline</span>(iris<span class="op">$</span>Sepal.Length);</a>
+<a class="sourceLine" id="cb895-4" data-line-number="4"><span class="kw">qqnorm</span>(iris<span class="op">$</span>Sepal.Width);</a>
+<a class="sourceLine" id="cb895-5" data-line-number="5"><span class="kw">qqline</span>(iris<span class="op">$</span>Sepal.Width);</a>
+<a class="sourceLine" id="cb895-6" data-line-number="6"><span class="kw">qqnorm</span>(iris<span class="op">$</span>Petal.Length); <span class="co"># Strongly negatively skewed</span></a>
+<a class="sourceLine" id="cb895-7" data-line-number="7"><span class="kw">qqline</span>(iris<span class="op">$</span>Petal.Length);</a>
+<a class="sourceLine" id="cb895-8" data-line-number="8"><span class="kw">qqnorm</span>(iris<span class="op">$</span>Petal.Width); <span class="co"># Strongly negatively skewed</span></a>
+<a class="sourceLine" id="cb895-9" data-line-number="9"><span class="kw">qqline</span>(iris<span class="op">$</span>Petal.Width);</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-214-1.png" width="672" /></p>
+</div>
+<div id="sampling-distribution" class="section level2">
+<h2><span class="header-section-number">9.9</span> Sampling distribution</h2>
+<p>Lets take sepal length from iris dataset. There are 150 flowers. Lets consider this as population i.e. the 150 sepal length values are suppose the population (Which is not true in real sense).</p>
+<div class="sourceCode" id="cb896"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb896-1" data-line-number="1">sl =<span class="st"> </span>iris<span class="op">$</span>Sepal.Length;</a>
+<a class="sourceLine" id="cb896-2" data-line-number="2"><span class="kw">print</span>(sl);</a></code></pre></div>
+<pre><code>##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4
+##  [18] 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2 4.7 4.8 5.4 5.2 5.5
+##  [35] 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0
+##  [52] 6.4 6.9 5.5 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8
+##  [69] 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4
+##  [86] 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8
+## [103] 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7
+## [120] 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7
+## [137] 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9</code></pre>
+<p>Lets randomly select 50 flowers and see the mean sepal length.</p>
+<div class="sourceCode" id="cb898"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb898-1" data-line-number="1">sample1 =<span class="st"> </span><span class="kw">sample</span>(sl, <span class="dv">50</span>);</a>
+<a class="sourceLine" id="cb898-2" data-line-number="2"><span class="kw">print</span>(<span class="kw">mean</span>(sample1));</a></code></pre></div>
+<pre><code>## [1] 5.932</code></pre>
+<p>Lets repeat the sampling process 5 times and see how the mean values varies. As you can see from the result, each time we randomly sample, the sample mean varies. This variation is due to random sampling.</p>
+<p>Sampling distribution implies the distribution of sample statistics.</p>
+<div class="sourceCode" id="cb900"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb900-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">15</span>);</a>
+<a class="sourceLine" id="cb900-2" data-line-number="2">sample1 =<span class="st"> </span><span class="kw">sample</span>(sl, <span class="dv">50</span>);</a>
+<a class="sourceLine" id="cb900-3" data-line-number="3">sample2 =<span class="st"> </span><span class="kw">sample</span>(sl, <span class="dv">50</span>);</a>
+<a class="sourceLine" id="cb900-4" data-line-number="4">sample3 =<span class="st"> </span><span class="kw">sample</span>(sl, <span class="dv">50</span>);</a>
+<a class="sourceLine" id="cb900-5" data-line-number="5">sample4 =<span class="st"> </span><span class="kw">sample</span>(sl, <span class="dv">50</span>);</a>
+<a class="sourceLine" id="cb900-6" data-line-number="6">sample5 =<span class="st"> </span><span class="kw">sample</span>(sl, <span class="dv">50</span>);</a>
+<a class="sourceLine" id="cb900-7" data-line-number="7"><span class="kw">print</span>(<span class="kw">c</span>(<span class="kw">mean</span>(sample1), <span class="kw">mean</span>(sample2), <span class="kw">mean</span>(sample3), <span class="kw">mean</span>(sample4), <span class="kw">mean</span>(sample5)))</a></code></pre></div>
+<pre><code>## [1] 5.934 5.866 5.748 5.838 5.902</code></pre>
+<p>Lets repeat this sampling 100 times and plot the distribution of sample means.</p>
+<div class="sourceCode" id="cb902"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb902-1" data-line-number="1">meanvalues =<span class="st"> </span><span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb902-2" data-line-number="2"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb902-3" data-line-number="3">{</a>
+<a class="sourceLine" id="cb902-4" data-line-number="4">  meanvalues =<span class="st"> </span><span class="kw">c</span>(meanvalues, <span class="kw">mean</span>(<span class="kw">sample</span>(sl, <span class="dv">50</span>)));</a>
+<a class="sourceLine" id="cb902-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb902-6" data-line-number="6">meanvalues =<span class="st"> </span>meanvalues[<span class="op">-</span><span class="dv">1</span>];</a>
+<a class="sourceLine" id="cb902-7" data-line-number="7"><span class="kw">plot</span>(<span class="kw">density</span>(meanvalues), <span class="dt">xlab=</span><span class="st">&quot;sample mean&quot;</span>);</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-218-1.png" width="672" /></p>
+</div>
+<div id="standard-error" class="section level2">
+<h2><span class="header-section-number">9.10</span> Standard Error</h2>
+<div class="sourceCode" id="cb903"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb903-1" data-line-number="1"><span class="co"># Standard deviation of sample means is called standard error</span></a>
+<a class="sourceLine" id="cb903-2" data-line-number="2"><span class="kw">print</span>(<span class="kw">sd</span>(meanvalues));  <span class="co"># Standard Error</span></a></code></pre></div>
+<pre><code>## [1] 0.09538724</code></pre>
+<div class="sourceCode" id="cb905"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb905-1" data-line-number="1"><span class="co"># Estimate standard error from a single sample mean</span></a>
+<a class="sourceLine" id="cb905-2" data-line-number="2">sample1 =<span class="st"> </span><span class="kw">sample</span>(sl, <span class="dv">50</span>);</a>
+<a class="sourceLine" id="cb905-3" data-line-number="3"><span class="kw">sd</span>(sample1)<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">length</span>(sample1));</a></code></pre></div>
+<pre><code>## [1] 0.1210215</code></pre>
+<p>How larger sample sizes have low standard error i.e. larger sample truely represents population</p>
+<p>Lets repeat the sampling 5000 times. Also lets explore the different sample sizes
+n=10, n=30, n=100, n=1000</p>
+<div class="sourceCode" id="cb907"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb907-1" data-line-number="1">meanvalues1 =<span class="st"> </span><span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb907-2" data-line-number="2">meanvalues2 =<span class="st"> </span><span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb907-3" data-line-number="3">meanvalues3 =<span class="st"> </span><span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb907-4" data-line-number="4">meanvalues4 =<span class="st"> </span><span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb907-5" data-line-number="5"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5000</span>)</a>
+<a class="sourceLine" id="cb907-6" data-line-number="6">{</a>
+<a class="sourceLine" id="cb907-7" data-line-number="7">  meanvalues1 =<span class="st"> </span><span class="kw">c</span>(meanvalues1, <span class="kw">mean</span>(<span class="kw">sample</span>(sl, <span class="dv">10</span>)));</a>
+<a class="sourceLine" id="cb907-8" data-line-number="8">  meanvalues2 =<span class="st"> </span><span class="kw">c</span>(meanvalues2, <span class="kw">mean</span>(<span class="kw">sample</span>(sl, <span class="dv">30</span>)));</a>
+<a class="sourceLine" id="cb907-9" data-line-number="9">  meanvalues3 =<span class="st"> </span><span class="kw">c</span>(meanvalues3, <span class="kw">mean</span>(<span class="kw">sample</span>(sl, <span class="dv">100</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)));</a>
+<a class="sourceLine" id="cb907-10" data-line-number="10">  meanvalues4 =<span class="st"> </span><span class="kw">c</span>(meanvalues4, <span class="kw">mean</span>(<span class="kw">sample</span>(sl, <span class="dv">1000</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)));</a>
+<a class="sourceLine" id="cb907-11" data-line-number="11">}</a>
+<a class="sourceLine" id="cb907-12" data-line-number="12">meanvalues1 =<span class="st"> </span>meanvalues1[<span class="op">-</span><span class="dv">1</span>];</a>
+<a class="sourceLine" id="cb907-13" data-line-number="13">meanvalues2 =<span class="st"> </span>meanvalues2[<span class="op">-</span><span class="dv">1</span>];</a>
+<a class="sourceLine" id="cb907-14" data-line-number="14">meanvalues3 =<span class="st"> </span>meanvalues3[<span class="op">-</span><span class="dv">1</span>];</a>
+<a class="sourceLine" id="cb907-15" data-line-number="15">meanvalues4 =<span class="st"> </span>meanvalues4[<span class="op">-</span><span class="dv">1</span>];</a>
+<a class="sourceLine" id="cb907-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb907-17" data-line-number="17"><span class="co"># Standard error is less for n=1000 case</span></a>
+<a class="sourceLine" id="cb907-18" data-line-number="18"><span class="co"># i.e. as sample size increases, sampling bias decreases i.e. sample mean can truely represent the population mean</span></a>
+<a class="sourceLine" id="cb907-19" data-line-number="19"><span class="kw">print</span>(<span class="kw">c</span>(<span class="kw">sd</span>(meanvalues1),<span class="kw">sd</span>(meanvalues2),<span class="kw">sd</span>(meanvalues3),<span class="kw">sd</span>(meanvalues4)));</a></code></pre></div>
+<pre><code>## [1] 0.25022862 0.13585496 0.08228301 0.02609450</code></pre>
+<div class="sourceCode" id="cb909"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb909-1" data-line-number="1"><span class="co"># From the plot below, you can see the spread for n=1000 sample is less (blue line) i.e. having low standard error</span></a>
+<a class="sourceLine" id="cb909-2" data-line-number="2"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb909-3" data-line-number="3"><span class="kw">plot</span>(<span class="kw">density</span>(meanvalues1), <span class="dt">xlab=</span><span class="st">&quot;sample mean&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">16</span>), <span class="dt">lwd=</span><span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb909-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">density</span>(meanvalues2), <span class="dt">xlab=</span><span class="st">&quot;sample mean&quot;</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb909-5" data-line-number="5"><span class="kw">lines</span>(<span class="kw">density</span>(meanvalues3), <span class="dt">xlab=</span><span class="st">&quot;sample mean&quot;</span>, <span class="dt">col=</span><span class="st">&quot;green&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb909-6" data-line-number="6"><span class="kw">lines</span>(<span class="kw">density</span>(meanvalues4), <span class="dt">xlab=</span><span class="st">&quot;sample mean&quot;</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb909-7" data-line-number="7"><span class="kw">legend</span>(<span class="dv">6</span>,<span class="dv">15</span>,<span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;n=10&quot;</span>,<span class="st">&quot;n=30&quot;</span>,<span class="st">&quot;n=100&quot;</span>,<span class="st">&quot;n=1000&quot;</span>), <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;green&quot;</span>,<span class="st">&quot;blue&quot;</span>))</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-220-1.png" width="672" /></p>
+</div>
+<div id="confidence-interval" class="section level2">
+<h2><span class="header-section-number">9.11</span> Confidence interval</h2>
+<p>First decide what confidece interval you want. Suppose lets say you want to estimate the 95% confidence interval for mean sepal length of iris dataset. So 95% interval means, middle area around mean is 95%. So remaining upper and lower tail area would be 2.5% each i.e. 0.025 (Lower 2.5%, Upper 2.5% so that total = 5%).</p>
+<p>Estimate the zscore for 0.025 using qnorm function.
+Or to estimate the upper tail one can use (0.025+0.95 = 0.975).</p>
+<p>Since there are two tails of the normal distribution, the 95% confidence level would imply the 97.5th percentile of the normal distribution at the upper tail.</p>
+<div class="sourceCode" id="cb910"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb910-1" data-line-number="1">q95 =<span class="st"> </span><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="fl">0.025</span>);  <span class="co"># Lower tail</span></a>
+<a class="sourceLine" id="cb910-2" data-line-number="2"><span class="kw">print</span>(q95);</a></code></pre></div>
+<pre><code>## [1] -1.959964</code></pre>
+<div class="sourceCode" id="cb912"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb912-1" data-line-number="1">q95 =<span class="st"> </span><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="fl">0.025</span>); <span class="co"># Upper tail</span></a>
+<a class="sourceLine" id="cb912-2" data-line-number="2"><span class="kw">print</span>(q95); </a></code></pre></div>
+<pre><code>## [1] -1.959964</code></pre>
+<p>Now estimate standard error for sepal length</p>
+<div class="sourceCode" id="cb914"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb914-1" data-line-number="1">sl =<span class="st"> </span>iris<span class="op">$</span>Sepal.Length;</a>
+<a class="sourceLine" id="cb914-2" data-line-number="2">sl_stderror =<span class="st"> </span><span class="kw">sd</span>(sl)<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">length</span>(sl));</a>
+<a class="sourceLine" id="cb914-3" data-line-number="3"><span class="kw">print</span>(sl_stderror);</a></code></pre></div>
+<pre><code>## [1] 0.06761132</code></pre>
+<p>Now estimate confidence interval (mean +/- z* * SE)</p>
+<p>z* * SE is called margin of error.</p>
+<div class="sourceCode" id="cb916"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb916-1" data-line-number="1">conf_low =<span class="st">  </span><span class="kw">mean</span>(sl) <span class="op">+</span><span class="st"> </span>q95 <span class="op">*</span><span class="st"> </span>sl_stderror;</a>
+<a class="sourceLine" id="cb916-2" data-line-number="2"><span class="kw">print</span>(conf_low);</a></code></pre></div>
+<pre><code>## [1] 5.710818</code></pre>
+<div class="sourceCode" id="cb918"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb918-1" data-line-number="1">conf_high =<span class="st">  </span><span class="kw">mean</span>(sl) <span class="op">-</span><span class="st"> </span>q95 <span class="op">*</span><span class="st"> </span>sl_stderror;</a>
+<a class="sourceLine" id="cb918-2" data-line-number="2"><span class="kw">print</span>(conf_high);</a></code></pre></div>
+<pre><code>## [1] 5.975849</code></pre>
+<p>So we are 95% confident that population mean of sepal length will lie between 5.71 and 5.95.</p>
+</div>
+<div id="hypothesis-test-for-single-sample-mean" class="section level2">
+<h2><span class="header-section-number">9.12</span> Hypothesis test for single sample mean</h2>
+<p>Consider sepal length from IRIS dataset. Lets assume that its a sample of 150 flowers whose sepal length is measured. However the actual population must be larger than 150 flower. From this sample of 150 flowers estimate the sample mean.</p>
+<p>Objective is to compare this sample mean w.r.t some population mean and ask the question whether the sample mean is different/greater/less than the population mean. If answer comes its really different/greater/less, then how much confident/sure we are.</p>
+<p>We will proceed slowly.</p>
+<p>For now, first estimate sample mean.</p>
+<div class="sourceCode" id="cb920"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb920-1" data-line-number="1">sl =<span class="st"> </span>iris<span class="op">$</span>Sepal.Length;</a>
+<a class="sourceLine" id="cb920-2" data-line-number="2"><span class="kw">mean</span>(sl);</a></code></pre></div>
+<pre><code>## [1] 5.843333</code></pre>
+<p>So sample mean estimated is 5.84;</p>
+<p>Lets ask the question whether mean sepal length of iris flowers are different than 6 or not?</p>
+<p>Null hypo: sample mean = 6</p>
+<p>Alternate hypo: sample mean not equal to 6</p>
+<p>Such hypothesis testing is called two-tailed. Lets do a t-test with two tailed.</p>
+<div class="sourceCode" id="cb922"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb922-1" data-line-number="1">tres=<span class="st"> </span><span class="kw">t.test</span>(<span class="dt">x =</span> sl, <span class="dt">mu =</span> <span class="dv">6</span>, <span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>);</a>
+<a class="sourceLine" id="cb922-2" data-line-number="2"><span class="kw">print</span>(tres);</a></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  sl
+## t = -2.3172, df = 149, p-value = 0.02186
+## alternative hypothesis: true mean is not equal to 6
+## 95 percent confidence interval:
+##  5.709732 5.976934
+## sample estimates:
+## mean of x 
+##  5.843333</code></pre>
+<p>Lets analyze the results. How do u get t-statistics value as -2.31 ?</p>
+<p>t = (x - population mean)/ standard error of mean</p>
+<p>Lets calculate one by one</p>
+<div class="sourceCode" id="cb924"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb924-1" data-line-number="1">mean_sl =<span class="st"> </span><span class="kw">mean</span>(sl);  <span class="co"># sample mean of sepal length</span></a>
+<a class="sourceLine" id="cb924-2" data-line-number="2">sd_sl =<span class="st"> </span><span class="kw">sd</span>(sl);  <span class="co"># sample standard deviation</span></a>
+<a class="sourceLine" id="cb924-3" data-line-number="3">n_sl =<span class="st"> </span><span class="kw">length</span>(sl);  <span class="co"># sample size</span></a>
+<a class="sourceLine" id="cb924-4" data-line-number="4">se_sl =<span class="st"> </span>sd_sl<span class="op">/</span><span class="kw">sqrt</span>(n_sl); <span class="co"># standard error of sample mean</span></a>
+<a class="sourceLine" id="cb924-5" data-line-number="5">tstat =<span class="st"> </span>(mean_sl <span class="op">-</span><span class="st"> </span><span class="dv">6</span>)<span class="op">/</span>se_sl;  <span class="co"># t statistics for which hypothesis testing is to be performed</span></a>
+<a class="sourceLine" id="cb924-6" data-line-number="6"><span class="kw">print</span>(tstat);</a></code></pre></div>
+<pre><code>## [1] -2.317166</code></pre>
+<p>So we saw that test statistics is -2.31</p>
+<p>Degree of freedom df is n-1 i.e. 149</p>
+<p>Now lets estimate 95% confidence interval of sample mean</p>
+<div class="sourceCode" id="cb926"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb926-1" data-line-number="1">zstar=<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>);</a>
+<a class="sourceLine" id="cb926-2" data-line-number="2">me_sl =<span class="st"> </span>zstar<span class="op">*</span>se_sl;  <span class="co"># margin of error at 95% conf interval</span></a>
+<a class="sourceLine" id="cb926-3" data-line-number="3">conf_low =<span class="st">  </span>mean_sl <span class="op">-</span><span class="st"> </span>me_sl;</a>
+<a class="sourceLine" id="cb926-4" data-line-number="4">conf_high =<span class="st"> </span>mean_sl <span class="op">+</span><span class="st"> </span>me_sl;</a>
+<a class="sourceLine" id="cb926-5" data-line-number="5"><span class="kw">print</span>(<span class="kw">c</span>(conf_low, conf_high));</a></code></pre></div>
+<pre><code>## [1] 5.710818 5.975849</code></pre>
+<p>Now lets estimate pvalue. Its the probability of observing a value &gt; test statistics</p>
+<p>since we are using t-test, we can call pt function.</p>
+<div class="sourceCode" id="cb928"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb928-1" data-line-number="1">pval =<span class="st"> </span><span class="dv">2</span><span class="op">*</span><span class="st"> </span><span class="kw">pt</span>(<span class="dt">q =</span> tstat, <span class="dt">df =</span> n_sl<span class="dv">-1</span>);  <span class="co"># Why multiplying with 2? Its 2 tail</span></a>
+<a class="sourceLine" id="cb928-2" data-line-number="2"><span class="kw">print</span>(pval);</a></code></pre></div>
+<pre><code>## [1] 0.02185662</code></pre>
+<p>So this pval is &lt; 0.05, we reject null hypothesis and state that there is strong evidence exist to support the fact that the sample mean of sepal length is significantly different than 6</p>
+</div>
+<div id="one-tailed-test-greater" class="section level2">
+<h2><span class="header-section-number">9.13</span> One tailed test (Greater)</h2>
+<p>Null: sample mean = 6
+Alternative : sample mean &gt; 6</p>
+<div class="sourceCode" id="cb930"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb930-1" data-line-number="1">tres=<span class="st"> </span><span class="kw">t.test</span>(<span class="dt">x =</span> sl, <span class="dt">mu =</span> <span class="dv">6</span>, <span class="dt">alternative =</span> <span class="st">&quot;greater&quot;</span>);</a>
+<a class="sourceLine" id="cb930-2" data-line-number="2"><span class="kw">print</span>(tres);</a></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  sl
+## t = -2.3172, df = 149, p-value = 0.9891
+## alternative hypothesis: true mean is greater than 6
+## 95 percent confidence interval:
+##  5.731427      Inf
+## sample estimates:
+## mean of x 
+##  5.843333</code></pre>
+<p>test statistics is -2.3172 as calculated above</p>
+<p>Confidence interval has no upper limit</p>
+<p>What is probability of observing values &gt; -2.3172 with 149 degree of freedom?</p>
+<div class="sourceCode" id="cb932"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb932-1" data-line-number="1"><span class="kw">pt</span>(<span class="dt">q =</span> tstat, <span class="dt">df =</span> n_sl<span class="dv">-1</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>## [1] 0.9890717</code></pre>
+<p>Here we didnot multiply with 2 since we are performing one tailed test.</p>
+<p>pval observed was 0.98 which is &gt; 0.05 so we cant reject null hypothesis. i.e. there is no substantial evidence exist by which we can claim that sample mean of sepal length is &gt; 6.</p>
+</div>
+<div id="one-tailed-test-lesser" class="section level2">
+<h2><span class="header-section-number">9.14</span> One tailed test (Lesser)</h2>
+<p>Null: sample mean = 6
+Alternative : sample mean &lt; 6</p>
+<div class="sourceCode" id="cb934"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb934-1" data-line-number="1">tres=<span class="st"> </span><span class="kw">t.test</span>(<span class="dt">x =</span> sl, <span class="dt">mu =</span> <span class="dv">6</span>, <span class="dt">alternative =</span> <span class="st">&quot;less&quot;</span>);</a>
+<a class="sourceLine" id="cb934-2" data-line-number="2"><span class="kw">print</span>(tres);</a></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  sl
+## t = -2.3172, df = 149, p-value = 0.01093
+## alternative hypothesis: true mean is less than 6
+## 95 percent confidence interval:
+##     -Inf 5.95524
+## sample estimates:
+## mean of x 
+##  5.843333</code></pre>
+<p>test statistics is -2.3172 as calculated above</p>
+<p>Confidence interval has no lower limit</p>
+<p>What is probability of observing values &lt; -2.3172 with 149 degree of freedom?</p>
+<div class="sourceCode" id="cb936"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb936-1" data-line-number="1"><span class="kw">pt</span>(<span class="dt">q =</span> tstat, <span class="dt">df =</span> n_sl<span class="dv">-1</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>## [1] 0.01092831</code></pre>
+<p>Here we didnot multiply with 2 since we are performing one tailed test.</p>
+<p>pval observed was 0.01 which is &lt; 0.05 so we can reject null hypothesis saying that we have substantial evidence to claim that sample mean of sepal length is &lt; 6.</p>
+</div>
+<div id="hypothesis-test-for-two-sample-mean-unpaired" class="section level2">
+<h2><span class="header-section-number">9.15</span> Hypothesis test for two sample mean, unpaired</h2>
+<p>Using this test we can compare two samples and perform 3 possible tests</p>
+<ol style="list-style-type: decimal">
+<li><p>Whether sample means of the two samples are same or not.</p></li>
+<li><p>Whether sample1 mean is &gt; sample2 mean or not?</p></li>
+<li><p>Whether sample1 mean is &lt; sample2 mean or not?</p></li>
+</ol>
+<p>In this case we assume that two samples are not paired. So sample sizes may vary. However we assume that</p>
+<ol style="list-style-type: decimal">
+<li><p>Both samples are from a normally distributed population.</p></li>
+<li><p>Observations are independent.</p></li>
+<li><p>Samples are with uniform variability.</p></li>
+</ol>
+<p>Lets take an example from IRIS dataset. We have 3 flowers, setosa versicolor virginica, each 50 flowers. Our task is to check whether mean sepal length of these three flowers differ among them or not?</p>
+<div class="sourceCode" id="cb938"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb938-1" data-line-number="1">sl_setosa =<span class="st"> </span>iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span>, <span class="st">&quot;Sepal.Length&quot;</span>];</a>
+<a class="sourceLine" id="cb938-2" data-line-number="2">sl_versicolor =<span class="st"> </span>iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;versicolor&quot;</span>, <span class="st">&quot;Sepal.Length&quot;</span>];</a>
+<a class="sourceLine" id="cb938-3" data-line-number="3">sl_virginica =<span class="st"> </span>iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;virginica&quot;</span>, <span class="st">&quot;Sepal.Length&quot;</span>];</a></code></pre></div>
+<p>Now lets check whether sample mean of setosa and versicolor are different or not?</p>
+<div class="sourceCode" id="cb939"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb939-1" data-line-number="1"><span class="kw">t.test</span>(<span class="dt">x =</span> sl_setosa, <span class="dt">y =</span> sl_versicolor)</a></code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  sl_setosa and sl_versicolor
+## t = -10.521, df = 86.538, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -1.1057074 -0.7542926
+## sample estimates:
+## mean of x mean of y 
+##     5.006     5.936</code></pre>
+<p>Now lets look at the output one by one</p>
+<p>Lets estimate mean of x and mean of y and cross check with the output.</p>
+<div class="sourceCode" id="cb941"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb941-1" data-line-number="1"><span class="kw">mean</span>(sl_setosa);</a></code></pre></div>
+<pre><code>## [1] 5.006</code></pre>
+<div class="sourceCode" id="cb943"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb943-1" data-line-number="1"><span class="kw">mean</span>(sl_versicolor);</a></code></pre></div>
+<pre><code>## [1] 5.936</code></pre>
+<p>Now calculate test statistics which is equal to difference of mean</p>
+<div class="sourceCode" id="cb945"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb945-1" data-line-number="1">tstat =<span class="st"> </span><span class="kw">mean</span>(sl_setosa) <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(sl_versicolor);</a>
+<a class="sourceLine" id="cb945-2" data-line-number="2"><span class="kw">print</span>(tstat);</a></code></pre></div>
+<pre><code>## [1] -0.93</code></pre>
+</div>
+<div id="hypothesis-test-for-two-sample-mean-paired" class="section level2">
+<h2><span class="header-section-number">9.16</span> Hypothesis test for two sample mean, paired</h2>
+</div>
+<div id="check-for-normality" class="section level2">
+<h2><span class="header-section-number">9.17</span> Check for normality</h2>
+</div>
+<div id="check-for-uniform-variance" class="section level2">
+<h2><span class="header-section-number">9.18</span> Check for uniform variance</h2>
+</div>
+<div id="hypothesis-test-for-single-sample-proportion" class="section level2">
+<h2><span class="header-section-number">9.19</span> Hypothesis test for single sample proportion</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="descriptive-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
